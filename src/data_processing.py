@@ -53,6 +53,15 @@ class SentimentAnalyzer:
         )
         return sentiment_frame
 
+    def get_sentiment(self, text):
+        sentiment_scores = self.sia.polarity_scores(text)
+        if sentiment_scores["compound"] <= -0.05:
+            return "Negative"
+        elif sentiment_scores["compound"] >= 0.05:
+            return "Positive"
+        else:
+            return "Neutral"
+
 
 # Calculates the mean vector using googles pretrained model for more accurate word embedding.
 # Used to vectorize text in pipeline
