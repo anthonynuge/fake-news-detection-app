@@ -13,13 +13,6 @@ from sklearn.tree import DecisionTreeClassifier
 from sklearn.ensemble import GradientBoostingClassifier
 
 
-# Create all the pipelines and store into a array. Array can be used for batch processsing
-# def create_all_pipelines():
-#     nb_pipe = create_nb_pipe()
-#     dtc_pipe = create_dtc_pipe()
-#     lr_pipe = create_lr_pipe()
-#     gbc_pipe = create_gbc_pipe()
-#     return [nb_pipe, dtc_pipe, lr_pipe, gbc_pipe]
 def create_all_pipelines():
     potential_pipes = {
         "nb_tfidf": create_nb_pipe(),
@@ -106,6 +99,19 @@ def create_gbc_pca_pipe():
             ("scalar", StandardScaler()),
             ("pca", PCA(n_components=3)),
             ("classifier", GradientBoostingClassifier()),
+        ]
+    )
+    return pipe
+
+
+def create_best_gbc_pipe():
+    pipe = Pipeline(
+        [
+            ("mean_vector", WordEmbedder()),
+            (
+                "classifier",
+                GradientBoostingClassifier(learning_rate=0.05, n_estimators=70),
+            ),
         ]
     )
     return pipe
