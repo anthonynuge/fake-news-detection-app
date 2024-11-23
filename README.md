@@ -1,12 +1,28 @@
 # Fake News Detection App
 
-A machine learning application that detects fake news based on article content. Built using **Python**, **scikit-learn**, and **Natural Language Processing (NLP)** techniques, this application provides a user-friendly interface to help users determine the credibility of news articles.
+A machine learning application that detects fake news based on article content. Built using **Python**, **scikit-learn**, and **Natural Language Processing (NLP)** techniques, this application provides a user-friendly interface to help users determine the credibility of news articles. Check out the notebooks to see the testing and analysis.
+
+## Limitations
+
+There is no fact checking involved. Language and word choice is used to make predictions which helps identify biased, clickbaity texts. As a result depending on the context fake articles can be passed as real.
+
+## Demo
+
+![App Demo](demo/demo.gif)
 
 ## Features
 
 - **Fake News Detection:** Classify news articles as real or fake using machine learning models.
 - **User-Friendly Interface:** Upload file or copy and paste text to analyze
 - **Machine Learning Model:** Uses NLP techniques and a trained classification model to provide reliable results.
+
+## Visualization
+
+Unsupervised clustering of articles.
+
+![App Demo](demo/pca2d.png)
+
+![App Demo](demo/pca3d.png)
 
 ## Tech Stack
 
